@@ -1,0 +1,37 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+sortingenv/
+myenv/
+venv/
+.env/
+
+# System / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and debug
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Model or AI-related experiments
+gemini code/
+notebooks/
+*.ipynb_checkpoints
+
+# Sample data or screenshots
+sample/
+Zsample/
+
+# Compiled / distribution
+build/
+dist/
+*.egg-info/
