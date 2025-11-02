@@ -5,10 +5,13 @@ from ui.rectangle import visual_rect, element_base
 from ui.button import Button
 from functions import gen_elements, draw_elements
 from functions import selection_detials, complexity_detials, selection_details_2
-from algorithms.algorithm import selection_sort, insertion_sort
-from algorithms.algorithm import bubble_sort, merge_sort, quick_sort
+from algorithms.bubble import bubble_sort
+from algorithms.insertion import insertion_sort
+from algorithms.selection import selection_sort
+from algorithms.merge import merge_sort
+from algorithms.quick import quick_sort
 
-# --- 1. Global Setup and Constants ---
+# --- Global Setup and Constants ---
 pygame.init()
 clock = pygame.time.Clock()
 
@@ -61,8 +64,6 @@ def shuff(arr):
     """Shuffles the array in place."""
     random.shuffle(arr)
     return arr
-
-
 
 # -------------------- BUTTONS --------------------
 # Algorithm Btns
@@ -142,14 +143,10 @@ while running:
                     for other_btn in num_of_elements:
                         other_btn.selected = False
                     num_of_elements[0].selected = True 
-            
-            
-            # draw_elements(nums, visualizer)
 
         if shuffle_btn.is_clicked(event):
             if nums:
                 nums = shuff(nums)
-                # draw_elements(nums, visualizer)
 
         if sort_btn.is_clicked(event): 
             selected_btn = next((b for b in algo_btn if b.selected), None)
@@ -157,7 +154,6 @@ while running:
                 # Execute the sorting algorithm action
                 selected_btn.action()
 
-            # draw_elements(nums, visualizer)
 
 
     # --- 4. Drawing Content onto Surfaces (Redrawn every frame) ---
